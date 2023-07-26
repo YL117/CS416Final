@@ -53,7 +53,7 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     var g_scene1_root = svg.append("g");
     var g_scene1_text = g_scene1_root.append("g");
     g_scene1_text.append("text")
-        .text(function () {return "Death of US States by CVOID-19 on December 31st";} )
+        .text(function () {return "US Deceased Count of States by CVOID-19 on December 31st";} )
         .attr("x", function () {return (width - this.getComputedTextLength()) / 2;})
         .attr("y", margin)
         .attr("class","text");
@@ -212,7 +212,7 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     {
         note: {
             label: "Recorded on Dec 31st of 2020, 2021, 2022, from left to right and bright to dark." /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
-            title: "Accumulative Death"/* (d) => `${d.State},${d.Date}` */,
+            title: "Accumulative Deceased Count"/* (d) => `${d.State},${d.Date}` */,
         },
         x: 320,
         y: 360,
@@ -238,7 +238,7 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     {
         note: {
             label: "Note that except for Texas which remain 2nd highest, the order does change. The current order is based on 2022." /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
-            title: "States with highest death"/* (d) => `${d.State},${d.Date}` */,
+            title: "States with most deceased"/* (d) => `${d.State},${d.Date}` */,
         },
         x: width - 70,
         y: 150,
@@ -263,7 +263,7 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     var g_scene2_root = svg.append("g");
     var g_scene2_text = g_scene2_root.append("g");
     g_scene2_text.append("text")
-        .text(function () {return "US accumulative death by state on 1st of each month";} )
+        .text(function () {return "US accumulative deceased by state on 1st of each month";} )
         .attr("x", function () {return (width - this.getComputedTextLength()) / 2;})
         .attr("y", margin)
         .attr("class","text");
@@ -348,8 +348,8 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     const annotations1_scene2 = [
     {
         note: {
-            label: "The accumulative death is monotone increasing, expectedly. Hover over a dot to reveal detail." /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
-            title: "Progressive Death"/* (d) => `${d.State},${d.Date}` */,
+            label: "The accumulative accumulative is monotone increasing, expectedly. Hover over a dot to reveal detail." /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
+            title: "Progressive Deceased Count"/* (d) => `${d.State},${d.Date}` */,
         },
         x: 610,
         y: 360,
@@ -375,7 +375,7 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     {
         note: {
             label: "The data is sampled at the start of each month. There is much to display, so the states are limited to 5." /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
-            title: "States with highest death"/* (d) => `${d.State},${d.Date}` */,
+            title: "States with most Deceased"/* (d) => `${d.State},${d.Date}` */,
         },
         x: 180,
         y: 250,
@@ -404,7 +404,7 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     g_scene3_root.append("text")
         .attr("y", margin / 2)
         .attr("class", "text")
-        .text("US Geo Map Accumulative Death by Region, State, Date")
+        .text("US Geo Map Accumulative Deceased Count by Region, State, Date")
         .attr("x", function () {return margin + (width - this.getComputedTextLength()) / 2;});
 
     var formatDateFilter = d3.timeFormat("%-m/%-d/%y");
@@ -492,8 +492,8 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
         .on("mouseover", function (event, d) {
             scene3_detail_text.text(d.Region + ", " + d.State + ", " + formatDate(parseDate(d.Date)))
                 .attr("x", function () {return margin + (width - this.getComputedTextLength()) / 2;})
-            scene3_detail_text2.text("Accumulative Death: " + d.Accumulative_Death +
-                ", Incremental Death: " + d.Incremental_Death)
+            scene3_detail_text2.text("Accumulative Deceased: " + d.Accumulative_Death +
+                ", Incremental Deceased: " + d.Incremental_Death)
                     .attr("x", function () {return margin + (width - this.getComputedTextLength()) / 2;})
         })
         .on("mouseout", function (event, d) {
@@ -536,8 +536,8 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
                 .on("mouseover", function (event, d) {
                     scene3_detail_text.text(d.Region + ", " + d.State + ", " + formatDate(parseDate(d.Date)))
                         .attr("x", function () {return margin + (width - this.getComputedTextLength()) / 2;})
-                    scene3_detail_text2.text("Accumulative Death: " + d.Accumulative_Death +
-                        ", Incremental Death: " + d.Incremental_Death)
+                    scene3_detail_text2.text("Accumulative Deceased: " + d.Accumulative_Death +
+                        ", Incremental Deceased: " + d.Incremental_Death)
                             .attr("x", function () {return margin + (width - this.getComputedTextLength()) / 2;})
                 })
                 .on("mouseout", function (event, d) {
@@ -585,7 +585,7 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     const annotations2_scene3 = [
     {
         note: {
-            label: "The dots represent a region. It changes size based on accumulative death. Same state means same color." /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
+            label: "The dots represent a region. It changes size based on accumulative deceased count. Same state means same color." /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
             title: "Geo Map"/* (d) => `${d.State},${d.Date}` */,
         },
         x: 700,
