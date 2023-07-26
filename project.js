@@ -20,6 +20,8 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
 
     const first_date = columnNames[indexPopulation + 1];
     const last_date = columnNames[columnCount - 1];
+    
+    const scene3_initial_date = "12/31/21"
 
     var parseDate = d3.timeParse("%m/%d/%y");
     var formatDate = d3.timeFormat("%Y-%m-%d");
@@ -414,7 +416,7 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
         .attr("height", 30)
         .attr("class", "slider-background");
     var dragPointer = g_slider_scene3.append("rect")
-        .attr("x", margin + width)
+        .attr("x", margin + scale_slider_scene3(parseDate(scene3_initial_date)))
         .attr("y", margin)
         .attr("width", 20)
         .attr("height", 40)
@@ -423,10 +425,10 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
         .attr("height", 40)
         .attr("class", "text")
         .text(formatDate(parseDate(last_date)))
-        .attr("x", margin + width)
+        .attr("x", margin + scale_slider_scene3(parseDate(scene3_initial_date)))
         .attr("y", margin + 60);
 
-    const filtered_last_day_scene3 = pivottedAndReducedData.filter(d => d.Date == last_date);
+    const filtered_last_day_scene3 = pivottedAndReducedData.filter(d => d.Date == scene3_initial_date);
     // var topology = {
     //     type: "Topology",
     //     objects: {
@@ -536,7 +538,7 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
                         .attr("x", function () {return margin + (width - this.getComputedTextLength()) / 2;})
                     scene3_detail_text2.text("Accumulative Death: " + d.Accumulative_Death +
                         ", Incremental Death: " + d.Incremental_Death)
-                            .attr("x", function () {return margin (width - this.getComputedTextLength()) / 2;})
+                            .attr("x", function () {return margin + (width - this.getComputedTextLength()) / 2;})
                 })
                 .on("mouseout", function (event, d) {
                     scene3_detail_text.text("");
