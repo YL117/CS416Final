@@ -1,0 +1,86 @@
+html, body {
+  margin: 50;
+  height: 100%;
+}
+
+.bar_2022 {
+  fill: gray;
+  stroke: black;
+  stroke-width: 5
+}
+
+.bar_2021 {
+  fill: darkgray;
+  stroke: black;
+  stroke-width: 5
+}
+
+.bar_2020 {
+  fill: lightgray;
+  stroke: black;
+  stroke-width: 5
+}
+
+.bar_selector {
+  fill: gray;
+  stroke: black;
+  stroke-width: 3
+}
+
+.bar_selector_unselected {
+  fill: lightgray;
+  stroke: black;
+  stroke-width: 3
+}
+
+.slider {
+  fill: slategray;
+}
+
+.slider-background {
+  fill: gray;
+}
+
+.scene3_edges {
+  stroke:slategray;
+  stroke-width:5;
+}
+
+.scene3_nodes {
+  fill:gray;
+  stroke:slategray;
+  stroke-width:3;
+}
+
+.text {
+  fill: black;
+  font-family: sans-serif
+}
+
+.button_text {
+  fill: black;
+  font-family: sans-serif;
+  pointer-events: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.g_root_visible {
+  /* opacity: 100; */
+  pointer-events: auto;
+}
+
+.g_root_invisible {
+  /* opacity: 0; */
+  pointer-events: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
