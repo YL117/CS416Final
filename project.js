@@ -424,7 +424,7 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     var dragHint = g_slider_scene3.append("text")
         .attr("height", 40)
         .attr("class", "text")
-        .text(formatDate(parseDate(last_date)))
+        .text(formatDate(parseDate(scene3_initial_date)))
         .attr("x", margin + scale_slider_scene3(parseDate(scene3_initial_date)))
         .attr("y", margin + 60);
 
