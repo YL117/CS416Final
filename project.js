@@ -53,7 +53,7 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     var g_scene1_root = svg.append("g");
     var g_scene1_text = g_scene1_root.append("g");
     g_scene1_text.append("text")
-        .text(function () {return "US Deceased Count of States by CVOID-19 on December 31st";} )
+        .text(function () {return "US Deceased Count of States by CVOID-19 on December 31st of 2020/21/22";} )
         .attr("x", function () {return (width - this.getComputedTextLength()) / 2;})
         .attr("y", margin)
         .attr("class","text");
@@ -240,10 +240,10 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
             label: "Note that except for Texas which remain 2nd highest, the order does change. The current order is based on 2022." /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
             title: "States with most deceased"/* (d) => `${d.State},${d.Date}` */,
         },
-        x: width - 70,
+        x: width + 10,
         y: 150,
-        dy: 180,
-        dx: -140,
+        dy: 30,
+        dx: 30,
         // accessors: {
         //     State: (d) => d.State,
         //     Accumulative_Death: (d) => d.Accumulative_Death,
@@ -259,6 +259,32 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
 
     g_scene1_root.append("g")
         .call(makeAnnotations2_scene1);
+
+    const annotations3_scene1 = [
+    {
+        note: {
+            label: "Notice how Illinois, New York and New Jeresy are hit the worst during 2020, but others are hit during 2021." /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
+            title: "Different burst time."/* (d) => `${d.State},${d.Date}` */,
+        },
+        x: width + 10,
+        y: 300,
+        dy: 70,
+        dx: 20,
+        // accessors: {
+        //     State: (d) => d.State,
+        //     Accumulative_Death: (d) => d.Accumulative_Death,
+        //     Date: (d) => d.Date
+        // }
+    }
+    ];
+
+    const makeAnnotations3_scene1 = d3.annotation()
+        // .editMode(true)
+        // .notePadding(15)        
+        .annotations(annotations3_scene1);
+
+    g_scene1_root.append("g")
+        .call(makeAnnotations3_scene1);
 
     var g_scene2_root = svg.append("g");
     var g_scene2_text = g_scene2_root.append("g");
@@ -374,13 +400,13 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     const annotations2_scene2 = [
     {
         note: {
-            label: "The data is sampled at the start of each month. There is much to display, so the states are limited to 5." /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
-            title: "States with most Deceased"/* (d) => `${d.State},${d.Date}` */,
+            label: "The number of deceased grow in burst, and is seemingly independent of each state." /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
+            title: "Deceased Count growing in Burst"/* (d) => `${d.State},${d.Date}` */,
         },
-        x: 180,
-        y: 250,
-        dy: 50,
-        dx: -50,
+        x: 0,
+        y: 350,
+        dy: 0,
+        dx: 0,
         // accessors: {
         //     State: (d) => d.State,
         //     Accumulative_Death: (d) => d.Accumulative_Death,
@@ -396,6 +422,58 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
 
     g_scene2_root.append("g")
         .call(makeAnnotations2_scene2);
+
+    const annotations3_scene2 = [
+    {
+        note: {
+            // label: "New York was hit particularly hard during April/May, the burst stablized by June 2020." /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
+            title: "New York Deceased Burst May 2020"/* (d) => `${d.State},${d.Date}` */,
+        },
+        x: 160,
+        y: 420,
+        dy: -50,
+        dx: 20,
+        // accessors: {
+        //     State: (d) => d.State,
+        //     Accumulative_Death: (d) => d.Accumulative_Death,
+        //     Date: (d) => d.Date
+        // }
+    }
+    ];
+
+    const makeAnnotations3_scene2 = d3.annotation()
+        // .editMode(true)
+        // .notePadding(15)        
+        .annotations(annotations3_scene2);
+
+    g_scene2_root.append("g")
+        .call(makeAnnotations3_scene2);
+
+    const annotations4_scene2 = [
+    {
+        note: {
+            //label: "" /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
+            title: "California Deceased Burst January - May 2021"/* (d) => `${d.State},${d.Date}` */,
+        },
+        x: 360,
+        y: 270,
+        dy: -30,
+        dx: -10,
+        // accessors: {
+        //     State: (d) => d.State,
+        //     Accumulative_Death: (d) => d.Accumulative_Death,
+        //     Date: (d) => d.Date
+        // }
+    }
+    ];
+
+    const makeAnnotations4_scene2 = d3.annotation()
+        // .editMode(true)
+        // .notePadding(15)        
+        .annotations(annotations4_scene2);
+
+    g_scene2_root.append("g")
+        .call(makeAnnotations4_scene2);
     
 
     var g_scene3_root = svg.append("g");
