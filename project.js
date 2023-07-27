@@ -189,6 +189,43 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
         .text(function(d) {return d.State;})
         .attr("x", function (d) {return width - this.getComputedTextLength();})
         .attr("y", function (d, i) {return (i * barDist_scene1) + margin + barDist_scene1 * 1.5;});
+
+    var g_scene1_legend = g_scene1_root.append("g");
+    g_scene1_legend.append("rect")
+        .attr("x", width - margin * 3 - 10)
+        .attr("y", height + margin - 15)
+        .attr("width", 30)
+        .attr("height", 20)
+        .attr("class","bar_2020");
+    g_scene1_legend.append("text")
+        .attr("x", width - margin * 5 / 2 - 10)
+        .attr("y", height + margin)
+        .text("Dec 31st, 2020")
+        .attr("class","text");
+
+    g_scene1_legend.append("rect")
+        .attr("x", width - margin * 3 - 10)
+        .attr("y", height + margin + 15)
+        .attr("width", 30)
+        .attr("height", 20)
+        .attr("class","bar_2021");
+    g_scene1_legend.append("text")
+        .attr("x", width - margin * 5 / 2 - 10)
+        .attr("y", height + margin + 30)
+        .text("Dec 31st, 2021")
+        .attr("class","text");
+
+    g_scene1_legend.append("rect")
+        .attr("x", width - margin * 3 - 10)
+        .attr("y", height + margin + 45)
+        .attr("width", 30)
+        .attr("height", 20)
+        .attr("class","bar_2022");
+    g_scene1_legend.append("text")
+        .attr("x", width - margin * 5 / 2 - 10)
+        .attr("y", height + margin + 60)
+        .text("Dec 31st, 2022")
+        .attr("class","text");
     
     // var g_scene1_labels = g_scene1_root.append("g")
     //     .selectAll("text")
@@ -207,32 +244,6 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     //     .text(function(d) {return d.State;})
     //     .attr("x", function (d) {return width - this.getComputedTextLength();})
     //     .attr("y", function (d, i) {return (i * barDist_scene1) + 50;});
-    
-    const annotations1_scene1 = [
-    {
-        note: {
-            label: "Recorded on Dec 31st of 2020, 2021, 2022, from left to right and bright to dark." /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
-            title: "Accumulative Deceased Count"/* (d) => `${d.State},${d.Date}` */,
-        },
-        x: 320,
-        y: 360,
-        dy: 160,
-        dx: 40,
-        // accessors: {
-        //     State: (d) => d.State,
-        //     Accumulative_Death: (d) => d.Accumulative_Death,
-        //     Date: (d) => d.Date
-        // }
-    }
-    ];
-
-    const makeAnnotations1_scene1 = d3.annotation()
-        // .editMode(true)
-        // .notePadding(15)        
-        .annotations(annotations1_scene1);
-
-    g_scene1_root.append("g")
-        .call(makeAnnotations1_scene1);
 
     const annotations2_scene1 = [
     {
