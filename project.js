@@ -552,7 +552,7 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     
     const scaleY_scene3 = d3.scaleLinear().domain([24, 50]).range([height,0]);
     const scaleX_scene3 = d3.scaleLinear().domain([-125, -65]).range([0,width]);
-    const scaleR_scene3 = d3.scaleLog().domain([1,1000]).range([0.5,2.5]);
+    const scaleR_scene3 = d3.scaleLog().domain([1,1000]).range([1,2.5]);
 
     g_scene3.selectAll("dot")
         .data(filtered_last_day_scene3)
