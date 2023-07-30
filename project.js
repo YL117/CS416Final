@@ -441,9 +441,10 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
             title: "New York Deceased Burst May 2020"/* (d) => `${d.State},${d.Date}` */,
         },
         x: 160,
-        y: 420,
+        y: 425,
         dy: -50,
         dx: 20,
+        subject: { radius: 10, radiusPadding: 2 }
         // accessors: {
         //     State: (d) => d.State,
         //     Accumulative_Death: (d) => d.Accumulative_Death,
@@ -452,7 +453,7 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     }
     ];
 
-    const makeAnnotations3_scene2 = d3.annotation()
+    const makeAnnotations3_scene2 = d3.annotation().type(d3.annotationCalloutCircle)
         // .editMode(true)
         // .notePadding(15)        
         .annotations(annotations3_scene2);
@@ -466,10 +467,11 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
             //label: "" /* (d) => `Accumulative Death ${d.Accumulative_Death}` */,
             title: "California Deceased Burst January - May 2021"/* (d) => `${d.State},${d.Date}` */,
         },
-        x: 360,
-        y: 270,
+        x: 365,
+        y: 275,
         dy: -30,
         dx: -10,
+        subject: { radius: 10, radiusPadding: 2 }
         // accessors: {
         //     State: (d) => d.State,
         //     Accumulative_Death: (d) => d.Accumulative_Death,
@@ -478,7 +480,7 @@ d3.csv("https://raw.githubusercontent.com/YL117/CS416Final/main/data/time_series
     }
     ];
 
-    const makeAnnotations4_scene2 = d3.annotation()
+    const makeAnnotations4_scene2 = d3.annotation().type(d3.annotationCalloutCircle)
         // .editMode(true)
         // .notePadding(15)        
         .annotations(annotations4_scene2);
